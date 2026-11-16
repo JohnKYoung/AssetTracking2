@@ -1,0 +1,21 @@
+# .NET build output
+bin/
+obj/
+
+# Visual Studio user-specific files
+.vs/
+*.user
+*.suo
+
+# macOS metadata
+.DS_Store
+
+# Local environment files and secrets
+.env
+.env.*
+!.env.example
+
+# Local SQL Server database files and backups
+*.mdf
+*.ldf
+*.bak
