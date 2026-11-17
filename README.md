@@ -6,9 +6,12 @@ AssetTracking2 is a .NET 10 console application for recording and viewing comput
 
 ## Features
 
-- Add laptops, desktop computers, iPhones, Samsung devices, Nokia devices, and tablets.
+- Create, read, update, and delete laptops, desktop computers, iPhones, Samsung devices, Nokia devices, and tablets.
 - Store each asset's type, brand, model, purchase date, price in USD, office location, and serial number.
-- List saved assets in a formatted table.
+- Validate required text, purchase dates, prices, and asset IDs.
+- List assets grouped by category and sorted by purchase date.
+- At startup and whenever the asset list is displayed, calculate each asset's status from its three-year lifetime and color the entire row: YELLOW under 3 months, RED from 3 to under 6 months, and NORMAL at 6 months or more (default terminal color).
+- After changing a purchase date, immediately display the asset's recalculated status and whether it changed.
 
 ## Project structure
 
@@ -49,11 +52,13 @@ dotnet build
 dotnet run
 ```
 
-The first run needs a working SQL Server connection. Once the menu appears:
+The first run needs a working SQL Server connection. On startup, the app displays the current asset list and lifetime-status colors. Press any key to reach the menu:
 
-1. Choose **1** to add an asset and enter its details.
-2. Choose **2** to view saved assets.
-3. Choose **3** to exit.
+1. Choose **1** to add an asset.
+2. Choose **2** to view assets, sorted by category and purchase date.
+3. Choose **3** to update an asset by ID. Leave a field blank to keep its current value.
+4. Choose **4** to delete an asset by ID; confirm the deletion when prompted.
+5. Choose **5** to exit.
 
 ## Database layout
 
